@@ -9,9 +9,12 @@ public class StringUtils {
      * @return Chaine avec uniquement des voyelles
      */
     public static String vowels(String candidate) {
+        if (candidate.equals("") || candidate.equals(null)) {
+            throw new IllegalArgumentException();
+        }
         String vowels = "";
         char[] letters = candidate.toCharArray();
-        for (int i = 1; i < candidate.length(); i++) {
+        for (int i = 0; i < candidate.length(); i++) {
             if (ALL_VOWELS.indexOf(letters[i]) >= 0) {
                 vowels += letters[i];
             }
